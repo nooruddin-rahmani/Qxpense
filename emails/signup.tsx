@@ -16,9 +16,9 @@ import {
 } from '@react-email/components';
 
 import Footer from './footer';
-import Footnote from './footnote';
 
-const baseUrl = 'https://expense.fyi';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export const SignUpEmail = ({ action_link = '' }: { action_link?: string }) => {
 	return (
@@ -54,7 +54,7 @@ export const SignUpEmail = ({ action_link = '' }: { action_link?: string }) => {
 							</Row>
 						</Text>
 						<Text className="text-gray-500">If you didn{"'"}t try to Sign up, you can safely ignore this email.</Text>
-						<Footnote hideNote={true} />
+				
 						<Footer />
 					</Container>
 				</Body>

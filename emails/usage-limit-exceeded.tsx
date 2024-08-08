@@ -15,10 +15,9 @@ import {
 } from '@react-email/components';
 
 import Footer from './footer';
-import Footnote from './footnote';
 
-const baseUrl = 'https://expense.fyi';
-const settingUrl = 'https://app.expense.fyi/settings';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+const settingUrl = `${process.env.NEXT_PUBLIC_APP_URL}/settings`;
 
 type UsageProps = {
 	plan?: string;
@@ -31,7 +30,7 @@ export default function UsageExceededEmail({ plan = 'Basic Plan', maxUsageLimit 
 			<Tailwind>
 				<Head />
 				<Preview>{`${plan} usage exceeded!`}</Preview>
-				<Body className="bg-white my-auto mx-auto font-sans">
+				<Body className="mx-auto my-auto font-sans bg-white">
 					<Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
 						<Section className="mt-[22px]">
 							<Img src={`${baseUrl}/icons/logo.png`} width="50" height="50" alt="Logo" className="block m-auto" />
@@ -56,7 +55,7 @@ export default function UsageExceededEmail({ plan = 'Basic Plan', maxUsageLimit 
 								Upgrade now
 							</Link>
 						</Text>
-						<Footnote hideNote={true} />
+				
 						<Footer />
 					</Container>
 				</Body>

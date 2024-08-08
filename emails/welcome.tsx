@@ -15,13 +15,11 @@ import {
 } from '@react-email/components';
 
 import Footer from './footer';
-import Footnote from './footnote';
 
-const baseUrl = 'https://expense.fyi';
-const appUrl = 'https://app.expense.fyi';
-const githubUrl = 'https://github.com/gokulkrishh/expense.fyi';
-const twitterUrl = 'https://twitter.com/gokul_i';
-const demoVideoUrl = `https://www.youtube.com/watch?v=faueh3BZXCo`;
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+
 
 export default function WelcomeEmail() {
 	return (
@@ -29,7 +27,7 @@ export default function WelcomeEmail() {
 			<Tailwind>
 				<Head />
 				<Preview>Welcome to Expense.fyi</Preview>
-				<Body className="bg-white my-auto mx-auto font-sans">
+				<Body className="mx-auto my-auto font-sans bg-white">
 					<Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
 						<Section className="mt-[22px]">
 							<Img src={`${baseUrl}/icons/logo.png`} width="50" height="50" alt="Logo" className="block m-auto" />
@@ -72,8 +70,6 @@ export default function WelcomeEmail() {
 						>
 							Get started
 						</Link>
-
-						<Footnote />
 						<Footer />
 					</Container>
 				</Body>

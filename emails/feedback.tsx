@@ -4,7 +4,7 @@ import { Body, Container, Head, Heading, Html, Img, Preview, Section, Tailwind, 
 
 import Footer from './footer';
 
-const baseUrl = 'https://expense.fyi';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export default function FeedbackEmail({ message = '', email = '' }: { message?: string; email?: string }) {
 	return (
@@ -12,7 +12,7 @@ export default function FeedbackEmail({ message = '', email = '' }: { message?: 
 			<Tailwind>
 				<Head />
 				<Preview>New Feedback Received</Preview>
-				<Body className="bg-white my-auto mx-auto font-sans">
+				<Body className="mx-auto my-auto font-sans bg-white">
 					<Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
 						<Section className="mt-[22px]">
 							<Img src={`${baseUrl}/icons/logo.png`} width="50" height="50" alt="Logo" className="block m-auto" />

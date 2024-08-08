@@ -1,6 +1,6 @@
 import { Hr, Link, Text } from '@react-email/components';
 
-const baseUrl = 'https://expense.fyi';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export default function Footer() {
 	return (
@@ -9,7 +9,7 @@ export default function Footer() {
 			<Text style={footer}>
 				&copy; {new Date().getFullYear()}{' '}
 				<Link href={baseUrl} target="_blank" style={{ ...link, textDecoration: 'underline' }}>
-					Expense.fyi
+					Qxpense
 				</Link>{' '}
 				· Effortlessly track and manage your expenses.
 			</Text>

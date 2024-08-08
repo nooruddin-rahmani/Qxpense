@@ -4,7 +4,7 @@ import { Body, Container, Head, Heading, Html, Img, Preview, Section, Tailwind, 
 
 import Footer from './footer';
 
-const baseUrl = 'https://expense.fyi';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export default function AccountedDeleteEmail() {
 	return (
