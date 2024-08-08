@@ -16,10 +16,8 @@ import {
 
 import Footer from './footer';
 
-
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const appUrl = process.env.NEXT_PUBLIC_APP_URL;
-
 
 export default function WelcomeEmail() {
 	return (
@@ -41,7 +39,6 @@ export default function WelcomeEmail() {
 						</Text>
 						<Text className="text-black text-[14px] leading-[24px]">Here is how you can get started:</Text>
 
-				
 						<Text className="m-1">4. Finally, spread some word about us.</Text>
 
 						<Link
