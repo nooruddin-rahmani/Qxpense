@@ -391,7 +391,7 @@ export default function Home() {
 				</p>
 				<Link
 					href={url.app.signin}
-					className="leading-2 mx-4 inline-flex h-[34px] items-center overflow-hidden rounded-full bg-gray-900 px-4 py-1 text-sm font-medium text-white transition hover:bg-primary/90"
+					className="leading-2  inline-flex h-[34px] items-center overflow-hidden rounded-full bg-gray-900 px-4 py-1 text-sm font-medium text-white transition hover:bg-primary/90"
 				>
 					Goto Dashboard
 				</Link>

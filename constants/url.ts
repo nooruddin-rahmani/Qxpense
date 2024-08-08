@@ -3,19 +3,19 @@ import { views } from './table';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const domain = 'qxpense.vercel.app';
+const domain = process.env.NEXT_PUBLIC_SITE_URL;
 const local = 'localhost:3000';
 const home = isProduction ? domain : local;
 
 const url = {
 	homeWithoutApp: home,
-	home: `//${home}`,
-	api: `${isProduction ? 'https://app.' : 'http://app.'}${home}`,
-	serverApi: `${isProduction ? 'https://' : 'http://'}${home}`,
+	home: `https://${home}`,
+	api: `${isProduction ? `https://${home}/app` : `http://${home}/app`}`,
+	serverApi: `${isProduction ? `https://${home}/app` : `http://${home}/app`}`,
 	app: {
-		signin: `//app.${home}/signin`,
-		signup: `//app.${home}/signup`,
-		overview: `//app.${home}`,
+		signin: `https://${home}/app/signin`,
+		signup: `https://${home}/app/signup`,
+		overview: `https://${home}/app`,
 	},
 	twitter: 'https://twitter.com/gokul_i',
 	github: 'https://github.com/gokulkrishh/expense.fyi',
