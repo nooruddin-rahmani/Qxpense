@@ -358,7 +358,7 @@ export default function Home() {
 		// 	</main>
 		// 	<Footer />
 		// </div>
-				<main
+		<main
 			className={`relative m-auto flex h-[100vh] w-full flex-col items-center justify-center bg-gradient-to-br from-sky-100 via-white to-sky-50 pl-2 pr-2`}
 		>
 			<div className="absolute inset-x-0 top-[-55px] z-10 h-96 overflow-hidden text-gray-900/40 opacity-10 [mask-image:linear-gradient(to_top,transparent,white)]">
@@ -389,15 +389,13 @@ export default function Home() {
 				<p className="mt-3 mb-6 text-sm font-medium text-center text-zinc-600">
 					Use your email address to securely sign in.
 				</p>
-							<Link
-		 				href={url.app.signin}
-					className="leading-2 mr-4 inline-flex h-[34px] items-center overflow-hidden rounded-full bg-gray-900 px-4 py-1 text-sm font-medium text-white transition hover:bg-primary/90"
-					>
-						Goto Dashboard
-					</Link>
-			
+				<Link
+					href={url.app.signin}
+					className="leading-2 mx-4 inline-flex h-[34px] items-center overflow-hidden rounded-full bg-gray-900 px-4 py-1 text-sm font-medium text-white transition hover:bg-primary/90"
+				>
+					Goto Dashboard
+				</Link>
 			</div>
-			
 		</main>
 	);
 }
