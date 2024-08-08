@@ -12,7 +12,7 @@ export default function AccountedDeleteEmail() {
 			<Tailwind>
 				<Head />
 				<Preview>Your Expense.fyi account is Deleted!</Preview>
-				<Body className="bg-white my-auto mx-auto font-sans">
+				<Body className="mx-auto my-auto font-sans bg-white">
 					<Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
 						<Section className="mt-[22px]">
 							<Img src={`${baseUrl}/icons/logo.png`} width="50" height="50" alt="Logo" className="block m-auto" />
