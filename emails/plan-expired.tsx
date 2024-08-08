@@ -15,7 +15,7 @@ import {
 } from '@react-email/components';
 
 import Footer from './footer';
-import Footnote from './footnote';
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 const settingUrl = `${process.env.NEXT_PUBLIC_APP_URL}/settings`;
 
@@ -50,7 +50,6 @@ export default function PlanExpiredEmail({ plan = 'Premium Plan' }: PlanExpiredP
 							Renew now
 						</Link>
 
-						<Footnote />
 						<Footer />
 					</Container>
 				</Body>

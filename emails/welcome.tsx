@@ -41,27 +41,7 @@ export default function WelcomeEmail() {
 						</Text>
 						<Text className="text-black text-[14px] leading-[24px]">Here is how you can get started:</Text>
 
-						<Text className="m-1">
-							1. Watch this{' '}
-							<Link href={demoVideoUrl} target="_blank" className="underline">
-								demo video
-							</Link>{' '}
-							to know how its done in Expense.fyi.
-						</Text>
-						<Text className="m-1">
-							2. Star our{' '}
-							<Link href={githubUrl} target="_blank" className="underline">
-								Github
-							</Link>{' '}
-							repository.
-						</Text>
-						<Text className="m-1">
-							3. Follow us on{' '}
-							<Link href={twitterUrl} target="_blank" className="underline">
-								Twitter
-							</Link>
-							.
-						</Text>
+				
 						<Text className="m-1">4. Finally, spread some word about us.</Text>
 
 						<Link
