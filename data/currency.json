@@ -24,7 +24,7 @@
 		"continent": "AS",
 		"capital": "Kabul",
 		"currency": ["AFN"],
-		"languages": ["ps", "uz", "tk"]
+		"languages": ["ps", "fa"]
 	},
 	"AG": {
 		"name": "Antigua and Barbuda",
