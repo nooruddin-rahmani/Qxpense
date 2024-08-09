@@ -4,8 +4,9 @@ import { views } from './table';
 const isProduction = process.env.NODE_ENV === 'production';
 
 const domain = process.env.NEXT_PUBLIC_SITE_URL;
-const local = 'localhost:3000/app'; // Updated to reflect the new base path
+const local = 'localhost:3000'; // Updated to reflect the new base path
 const home = isProduction ? domain : local;
+console.log('home', home);
 
 const url = {
 	homeWithoutApp: isProduction ? domain : 'localhost:3000', // Keeps the base domain without the /app path
@@ -15,7 +16,7 @@ const url = {
 	app: {
 		signin: `http://${home}/signin`, // Paths under /app are now covered by `home`
 		signup: `http://${home}/signup`,
-		overview: `http://${home}`,
+		overview: `http://${home}/app`,
 	},
 	twitter: 'https://twitter.com/gokul_i',
 	github: 'https://github.com/gokulkrishh/expense.fyi',
