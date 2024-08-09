@@ -14,8 +14,8 @@ const url = {
 	api: `${isProduction ? `https://${home}` : `http://${home}`}`,
 	serverApi: `${isProduction ? `https://${home}` : `http://${home}`}`,
 	app: {
-		signin: `${isProduction ? `${home}/signin` : `${home}/signin`}`, // Paths under /app are now covered by `home`
-		signup: `${isProduction ? `${home}/signup` : `${home}/signup`}`,
+		signin: `${isProduction ? `${home}/signin` : `http://${home}/signin`}`, // Paths under /app are now covered by `home`
+		signup: `${isProduction ? `${home}/signup` : `http://${home}/signup`}`,
 		overview: `http://${home}/app`,
 	},
 	twitter: 'https://twitter.com/gokul_i',
