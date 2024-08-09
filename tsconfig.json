@@ -19,7 +19,7 @@
 		"paths": {
 			"@components/*": ["components/*"],
 			"@lib/*": ["lib/*"],
-			"@prisma/*": ["node_modules/@prisma/*"]
+			"@prisma/*": ["@prisma/*"]
 		},
 		"plugins": [
 			{
