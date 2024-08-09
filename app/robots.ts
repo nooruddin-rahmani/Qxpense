@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			allow: '/',
 			disallow: '/private/',
 		},
-		sitemap: 'https://expense.fyi/sitemap.xml',
+		sitemap: 'https://qxpense.vercel.app/sitemap.xml',
 	};
 }

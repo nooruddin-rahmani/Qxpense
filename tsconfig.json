@@ -16,15 +16,16 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["components/*"],
+			"@lib/*": ["lib/*"],
+			"@prisma/*": ["node_modules/@prisma/*"]
+		},
 		"plugins": [
 			{
 				"name": "next"
 			}
-		],
-"paths": {
-  "@components/*": ["components/*"],
-  "@lib/*": ["lib/*"]
-}
+		]
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/global-error.tss"],
 	"exclude": ["node_modules", "text-filter"]
