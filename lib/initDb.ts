@@ -13,11 +13,18 @@ export async function initializeDatabase() {
       .filter((statement) => statement.trim() !== "");
 
     for (const statement of statements) {
-      await query(statement, []);
+      if (statement.trim()) {
+        await query(statement, []);
+      }
     }
 
     console.log("Database initialized successfully");
   } catch (error) {
     console.error("Error initializing database:", error);
+    throw new Error(
+      error instanceof Error
+        ? `Database initialization failed: ${error.message}`
+        : "Database initialization failed"
+    );
   }
 }
