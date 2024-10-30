@@ -23,10 +23,12 @@ interface Transaction {
 
 export default function Page() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
+        setLoading(true);
         const response = await fetch("/api/transactions");
         if (response.ok) {
           const data = await response.json();
@@ -36,6 +38,8 @@ export default function Page() {
         }
       } catch (error) {
         console.error("Error fetching transactions:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -50,32 +54,36 @@ export default function Page() {
             <CardTitle>All Transactions</CardTitle>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Amount</TableHead>
-                  <TableHead>Description</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Payee/Payer</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {transactions.map((transaction) => (
-                  <TableRow key={transaction.id}>
-                    <TableCell>{transaction.type}</TableCell>
-                    <TableCell>${transaction.amount}</TableCell>
-                    <TableCell>{transaction.description}</TableCell>
-                    <TableCell>
-                      {new Date(transaction.date).toLocaleDateString()}
-                    </TableCell>
-                    <TableCell>
-                      {transaction.payee || transaction.payer || "-"}
-                    </TableCell>
+            {loading ? (
+              <p>Loading transactions...</p>
+            ) : (
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Type</TableHead>
+                    <TableHead>Amount</TableHead>
+                    <TableHead>Description</TableHead>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Payee/Payer</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {transactions.map((transaction) => (
+                    <TableRow key={transaction.id}>
+                      <TableCell>{transaction.type}</TableCell>
+                      <TableCell>${transaction.amount}</TableCell>
+                      <TableCell>{transaction.description}</TableCell>
+                      <TableCell>
+                        {new Date(transaction.date).toLocaleDateString()}
+                      </TableCell>
+                      <TableCell>
+                        {transaction.payee || transaction.payer || "-"}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            )}
           </CardContent>
         </Card>
       </main>
