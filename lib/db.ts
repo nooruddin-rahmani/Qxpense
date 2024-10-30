@@ -44,4 +44,20 @@ export async function testConnection() {
   }
 }
 
+// Add index hints to your queries
+export async function optimizedQuery<T>(
+  sql: string,
+  values: SqlParameter[]
+): Promise<T[]> {
+  const connection = await pool.getConnection();
+  try {
+    // Add query hints
+    sql = `/*+ INDEX(table_name index_name) */ ${sql}`;
+    const [rows] = await connection.execute(sql, values);
+    return rows as T[];
+  } finally {
+    connection.release();
+  }
+}
+
 export default pool;
