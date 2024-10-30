@@ -51,8 +51,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export const description = "A multiple bar chart";
-
 const chartData = [
   { month: "January", income: 186, expense: 80 },
   { month: "February", income: 305, expense: 200 },
